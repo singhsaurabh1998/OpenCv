@@ -1,7 +1,7 @@
 import cv2
 
 # for classifing the face features
-face_classsifier = cv2.CascadeClassifier('E://Machine Learning A-Z Template Folder//OpenCV//haarcascade_frontalface_default.xml')
+face_classsifier = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 #will give the face
 def face_extract(img):
@@ -25,7 +25,7 @@ while True:
         a +=1 # we are collecting top 100 samples
         face = cv2.resize(face_extract(frame),(800,800))
         face = cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
-        image_path = 'E://Machine Learning A-Z Template Folder//OpenCV//Samples/user'+str(a)+'.jpg'
+        image_path = 'Samples/user'+str(a)+'.jpg'
         cv2.imwrite(image_path,face) #copy img to the above path
         cv2.putText(face, "Captured Images: "+str(a),(50,50),cv2.FONT_HERSHEY_COMPLEX, 1,(255,0,0),4)
         cv2.imshow('Faces',face)
